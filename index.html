@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Форма заявки</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="sheet" aria-labelledby="form-title">
+    <header class="sheet-header">
+      <h1 id="form-title" lang="en">FORM</h1>
+    </header>
+
+    <form id="application-form" novalidate>
+      <div class="fields">
+        <div class="field">
+          <label for="first-name">Имя</label>
+          <input id="first-name" name="first_name" type="text"
+            autocomplete="given-name" placeholder="Анна" required
+            aria-describedby="first-name-error">
+          <p class="field-error" id="first-name-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="last-name">Фамилия</label>
+          <input id="last-name" name="last_name" type="text"
+            autocomplete="family-name" placeholder="Иванова" required
+            aria-describedby="last-name-error">
+          <p class="field-error" id="last-name-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel"
+            autocomplete="tel" placeholder="+7 (999) 123-45-67" required
+            aria-describedby="phone-error">
+          <p class="field-error" id="phone-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="email">Электронная почта</label>
+          <input id="email" name="email" type="email" inputmode="email"
+            autocomplete="email" placeholder="anna@example.com" required
+            aria-describedby="email-error">
+          <p class="field-error" id="email-error" aria-live="polite"></p>
+        </div>
+      </div>
+      <button id="submit-button" type="submit">ОТПРАВИТЬ →</button>
+    </form>
+
+    <p id="form-status" class="form-status" role="status"
+      aria-live="polite" aria-atomic="true"></p>
+    <noscript>
+      <p class="noscript-message">Для отправки заявки включите JavaScript в браузере.</p>
+    </noscript>
+  </main>
+</body>
+</html>
